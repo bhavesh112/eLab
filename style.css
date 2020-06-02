@@ -12,9 +12,10 @@ h2 {
 }
 
 #introduction {
-	background-color: #14ffec;
+	background-color: #a9f5ee;
 	font-family: 'Tenali Ramakrishna', sans-serif;
 	font-size: 3rem;
+	padding-bottom: 60px;
 }
 
 #features {
@@ -57,12 +58,13 @@ h2 {
 
 .middle {
 	text-align: center;
+	padding: 25px;
 }
 
 #footer {
-    background-color: #14ffec;
+    background-color: #a9f5ee;
     font-size: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 10px;
 }
 
 .social-icon {
