@@ -80,3 +80,18 @@ h2 {
 .left-content{
 border-right: 1px double;
 }
+.btn
+{
+	color: #0d7377;
+	display: block;
+}
+
+.btn:hover
+{
+	color: #30e3ca;
+}
+.experiments
+{
+	font-size: 1.5rem;
+	
+}
