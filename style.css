@@ -10,7 +10,33 @@ h2 {
 	background-color: #0d7377;
 	font-family: 'Montserrat', sans-serif;
 }
+/* exp topic pgs */
+.topic-nav{
+	background-color: #0d7377;
+	font-family: 'Montserrat', sans-serif;
+}
+.navbar-fixed-left{
+	padding-top: 5rem;
+	width: 16rem;
+	height: 100%; 
+    position: fixed;
+    z-index: 1; 
+    top: 0; 
+    left: 1rem;
+    overflow-x: hidden; 
+  }
 
+.topic-content{
+	padding-top: 5rem;
+	padding-left: 18rem;
+	line-height: 1px;
+	width: 100%;;
+}
+.topic-list{
+	list-style: none; 
+	padding-left:.5px; 
+	line-height:2rem;
+}
 #introduction {
 	background-color: #a9f5ee;
 	font-family: 'Tenali Ramakrishna', sans-serif;
@@ -76,6 +102,12 @@ h2 {
 .biotech-labs{
 	padding-left: 2%;
 }
+.bioTechSub{
+	text-align: center;
+	padding: 2rem;
+	font-size: 1.5rem;
+}
+
 
 .left-content{
 border-right: 1px double;
@@ -89,9 +121,27 @@ border-right: 1px double;
 .btn:hover
 {
 	color: #30e3ca;
+	text-decoration: none;
 }
 .experiments
 {
-	font-size: 1.5rem;
+	font-size: 4rem;
 	
+}
+.topicTitle{
+    text-decoration: none;
+	color: #0d7377;
+	font-size: 1.3rem;
+}
+.topic{
+	text-decoration: none;
+	color: #0d7377;
+	font-size: 1.1rem;
+	
+}
+
+.topicTitle:hover
+{
+	color: #30e3ca;
+	text-decoration: none;
 }
