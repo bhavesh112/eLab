@@ -81,6 +81,52 @@ class Experiment
 }
 
 myExperiment = new Experiment();
-myExperiment.Add(5);
-console.log(myExperiment.sample);
-console.log(myExperiment.indication);
+
+
+var x = $(".Draggable").length; 
+for(let i=0;i<x;++i)
+{       
+    document.querySelectorAll(".Draggable")[i].setAttribute("draggable" ,"true");
+    document.querySelectorAll(".Draggable")[i].addEventListener("dragstart", function (ev){
+        ev.dataTransfer.setData("text",ev.target.id);
+    } );
+}
+for(let i=0;i<$(".Droppable2").length;++i)
+    {   document.querySelectorAll(".Droppable2")[i].addEventListener("drop",function (ev) {
+        ev.preventDefault();
+            var data=ev.dataTransfer.getData('text');
+        myExperiment.Add(Number(data));
+        alert("test is" + myExperiment.test+"  indication is"+myExperiment.indication);
+    ev.target.appendChild(data);
+    //document.createElement("img");
+    console.log(this.parentNode);
+    this.parentNode.removeChild(this);
+        }  );
+        document.querySelectorAll(".Droppable2")[i].addEventListener("dragover" ,function(ev){
+            ev.preventDefault();
+    });
+        
+}
+
+
+
+for(let i=0;i<$(".Droppable").length;++i)
+{
+    document.querySelectorAll(".Droppable")[i].addEventListener("drop",function (ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var copyimg= document.createElement("img");
+        var orignal= document.getElementById(data);
+        copyimg.src=orignal.src;
+        copyimg.alt=orignal.alt;
+        copyimg.classList.add("Droppable2");
+        ev.target.appendChild(copyimg);
+        copyimg.style.position="fixed";  
+        copyimg.style.left=ev.clientX+"px";
+        copyimg.style.top=ev.clientY+"px";
+        }  );
+        document.querySelectorAll(".Droppable")[i].addEventListener("dragover" ,function(ev){
+            ev.preventDefault();
+        });
+    }
+    
