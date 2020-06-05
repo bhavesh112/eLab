@@ -91,22 +91,6 @@ for(let i=0;i<x;++i)
         ev.dataTransfer.setData("text",ev.target.id);
     } );
 }
-for(let i=0;i<$(".Droppable2").length;++i)
-    {   document.querySelectorAll(".Droppable2")[i].addEventListener("drop",function (ev) {
-        ev.preventDefault();
-            var data=ev.dataTransfer.getData('text');
-        myExperiment.Add(Number(data));
-        alert("test is" + myExperiment.test+"  indication is"+myExperiment.indication);
-    ev.target.appendChild(data);
-    //document.createElement("img");
-    console.log(this.parentNode);
-    this.parentNode.removeChild(this);
-        }  );
-        document.querySelectorAll(".Droppable2")[i].addEventListener("dragover" ,function(ev){
-            ev.preventDefault();
-    });
-        
-}
 
 
 
@@ -121,12 +105,44 @@ for(let i=0;i<$(".Droppable").length;++i)
         copyimg.alt=orignal.alt;
         copyimg.classList.add("Droppable2");
         ev.target.appendChild(copyimg);
+        copyimg.addEventListener("drop",function (ev) {
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData('text');
+            myExperiment.Add(Number(data));
+            alert("test is" + myExperiment.test+"  indication is"+myExperiment.indication);
+       
+        //document.createElement("img");
+        console.log(this.parentNode);
+        this.parentNode.removeChild(this);
+            }  );
+        copyimg.addEventListener("dragover" ,function(ev){
+            ev.preventDefault();
+                      
+    });    
         copyimg.style.position="fixed";  
         copyimg.style.left=ev.clientX+"px";
         copyimg.style.top=ev.clientY+"px";
+        
         }  );
         document.querySelectorAll(".Droppable")[i].addEventListener("dragover" ,function(ev){
             ev.preventDefault();
         });
     }
     
+    for(let i=0;i<$(".Droppable2").length;++i)
+    {   document.querySelectorAll(".Droppable2")[i].addEventListener("drop",function (ev) {
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData('text');
+        myExperiment.Add(Number(data));
+        alert("test is" + myExperiment.test+"  indication is"+myExperiment.indication);
+    ev.target.appendChild(data);
+    //document.createElement("img");
+    console.log(this.parentNode);
+    this.parentNode.removeChild(this);
+        }  );
+        document.querySelectorAll(".Droppable2")[i].addEventListener("dragover" ,function(ev){
+            ev.preventDefault();
+                      
+    });
+        
+}
